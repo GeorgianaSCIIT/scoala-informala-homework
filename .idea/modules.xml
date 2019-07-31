@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/JavaContainerWithComparable/JavaContainerWithComparable.iml" filepath="$PROJECT_DIR$/JavaContainerWithComparable/JavaContainerWithComparable.iml" />
       <module fileurl="file://$PROJECT_DIR$/LocalStoreSimulation/LocalStoreSimulation.iml" filepath="$PROJECT_DIR$/LocalStoreSimulation/LocalStoreSimulation.iml" />
       <module fileurl="file://$PROJECT_DIR$/ObjectContainer/ObjectContainer.iml" filepath="$PROJECT_DIR$/ObjectContainer/ObjectContainer.iml" />
       <module fileurl="file://$PROJECT_DIR$/ObjectContainerWithComparable/ObjectContainerWithComparable.iml" filepath="$PROJECT_DIR$/ObjectContainerWithComparable/ObjectContainerWithComparable.iml" />
