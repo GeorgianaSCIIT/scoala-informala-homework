@@ -7,10 +7,7 @@ import ro.scit.entities.Student;
 import ro.scit.utilities.Adresa;
 import ro.scit.utilities.Hobby;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -28,24 +25,26 @@ public class Main {
         }
 
 
-
-        Map<Person, Hobby> hobby = new HashMap<>();
-
-        hobby.put(new Person("Mariana", 32), (new Hobby("Innot", 5, new Adresa("Romania", "Sibiu"))));
-        hobby.put(new Person("Mariana", 32), (new Hobby("Desen", 3, new Adresa("Romania", "Sibiu"))));
-        hobby.put(new Person("Mariana", 32), (new Hobby("Pian", 2, new Adresa("Romania", "Sibiu"))));
-
+        List<Hobby> hobbyList = new ArrayList<>();
+        hobbyList.add(new Hobby("Innot", 5, new Adresa("Romania", "Sibiu")));
+        hobbyList.add(new Hobby("Desen", 4, new Adresa("Romania", "Brasov")));
+        hobbyList.add(new Hobby("Pian", 2, new Adresa("Romania", "Cluj")));
 
 
         System.out.println("List of Hobbies");
+
+        Map<Person, ArrayList<Hobby>> hobby = new HashMap<>();
+        hobby.put(new Person("Mariana", 32), (ArrayList<Hobby>) hobbyList);
+
+
 
         for (Person i : hobby.keySet()) {
             System.out.println(i);
         }
 
 
-        for (Hobby h : hobby.values()) {
-            System.out.println(h);
+        for (ArrayList<Hobby> h : hobby.values()) {
+            h.forEach(System.out::println);
 
         }
 
