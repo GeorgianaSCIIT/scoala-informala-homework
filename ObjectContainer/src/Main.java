@@ -48,13 +48,26 @@ public class Main {
         }
 
 
-        Map<Persoane, Hobby> hobby = new HashMap<>();
+        List<Adresa> adresaInot = new ArrayList<>();
+        adresaInot.add(new Adresa("Italia", "Roma"));
+        adresaInot.add(new Adresa("Romania", "Sibiu"));
+        adresaInot.add(new Adresa("Olanda", "Amsterdam"));
 
-        hobby.put(new Persoane("Mariana", 32), (new Hobby("Innot", 5, new Adresa("Romania", "Sibiu"))));
-        hobby.put(new Persoane("Mariana", 32), (new Hobby("Desen", 3, new Adresa("Romania", "Sibiu"))));
-        hobby.put(new Persoane("Mariana", 32), (new Hobby("Pian", 2, new Adresa("Romania", "Sibiu"))));
+        List<Adresa> adresaDesen = new ArrayList<>();
+        adresaDesen.add(new Adresa("Franta", "Paris"));
+        adresaDesen.add(new Adresa("Romania", "Brasov"));
 
+        List<Adresa> adresaPian = new ArrayList<>();
+        adresaPian.add(new Adresa("Romania", "Bucuresti"));
 
+        List<Hobby> hobbyList = new ArrayList<>();
+        hobbyList.add(new Hobby("Innot", 5, (ArrayList<Adresa>) adresaInot));
+        hobbyList.add(new Hobby("Desen", 4, (ArrayList<Adresa>) adresaDesen));
+        hobbyList.add(new Hobby("Pian", 2, (ArrayList<Adresa>) adresaPian));
+
+        Map<Persoane, ArrayList<Hobby>> hobby = new HashMap<>();
+
+        hobby.put(new Persoane("Mariana", 32), (ArrayList<Hobby>) hobbyList);;
 
         System.out.println("List of Hobbies");
 
@@ -63,10 +76,11 @@ public class Main {
         }
 
 
-        for (Hobby h : hobby.values()) {
-            System.out.println(h);
+        for (ArrayList<Hobby> h : hobby.values()) {
+            h.forEach(System.out::println);
 
         }
+
 
 
 //        hobby.put(new("Mariana"), (new Hobby("Innot", 5, new Adresa("Romania", "Sibiu"))));
