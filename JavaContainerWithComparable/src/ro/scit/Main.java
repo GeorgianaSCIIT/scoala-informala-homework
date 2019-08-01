@@ -24,11 +24,23 @@ public class Main {
             System.out.println(p);
         }
 
+        List<Adresa> adresaInot = new ArrayList<>();
+        adresaInot.add(new Adresa("Italia", "Roma"));
+        adresaInot.add(new Adresa("Romania", "Sibiu"));
+        adresaInot.add(new Adresa("Olanda", "Amsterdam"));
+
+        List<Adresa> adresaDesen = new ArrayList<>();
+        adresaDesen.add(new Adresa("Franta", "Paris"));
+        adresaDesen.add(new Adresa("Romania", "Brasov"));
+
+        List<Adresa> adresaPian = new ArrayList<>();
+        adresaPian.add(new Adresa("Romania", "Bucuresti"));
 
         List<Hobby> hobbyList = new ArrayList<>();
-        hobbyList.add(new Hobby("Innot", 5, new Adresa("Romania", "Sibiu")));
-        hobbyList.add(new Hobby("Desen", 4, new Adresa("Romania", "Brasov")));
-        hobbyList.add(new Hobby("Pian", 2, new Adresa("Romania", "Cluj")));
+        hobbyList.add(new Hobby("Innot", 5, (ArrayList<Adresa>) adresaInot));
+        hobbyList.add(new Hobby("Desen", 4, (ArrayList<Adresa>) adresaDesen));
+        hobbyList.add(new Hobby("Pian", 2, (ArrayList<Adresa>) adresaPian));
+
 
 
         System.out.println("List of Hobbies");

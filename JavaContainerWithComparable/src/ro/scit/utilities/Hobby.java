@@ -1,5 +1,7 @@
 package ro.scit.utilities;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -8,11 +10,11 @@ import java.util.Objects;
  */
 
 public class Hobby {
-    Adresa adresa;
+    List <Adresa> adresa;
     private String hobbyName;
     private int frequency;
 
-    public Hobby(String hobbyName, int frequency, Adresa adresa) {
+    public Hobby(String hobbyName, int frequency, ArrayList<Adresa> adresa) {
         this.hobbyName = hobbyName;
         this.frequency = frequency;
         this.adresa = adresa;
