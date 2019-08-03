@@ -1,5 +1,4 @@
 package ro.sciit.utilities;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -14,7 +13,7 @@ public class Hobby {
     private int frequency;
 
 
-    public Hobby(String hobbyName, int frequency, ArrayList<Adresa> adresa) {
+    public Hobby(String hobbyName, int frequency, List<Adresa> adresa) {
         this.hobbyName = hobbyName;
         this.frequency = frequency;
         this.adresa = adresa;
@@ -40,7 +39,7 @@ public class Hobby {
         return "Hobby{" +
                 "hobbyName='" + hobbyName + '\'' +
                 ", frequency=" + frequency +
-                ", List of Addresses where this hobby can be practiced =" + adresa +
+                ", adresa=" + adresa +
                 '}';
     }
 
