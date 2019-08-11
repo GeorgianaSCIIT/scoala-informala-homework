@@ -1,5 +1,4 @@
 package ro.sciit.utilities;
-
 import java.util.Objects;
 
 /**
