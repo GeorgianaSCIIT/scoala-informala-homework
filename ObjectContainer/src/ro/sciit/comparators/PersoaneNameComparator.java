@@ -9,7 +9,8 @@ import java.util.Comparator;
 public class PersoaneNameComparator implements Comparator<Persoane> {
 
     @Override
-    public int compare(Persoane p1, Persoane p2) {
+    public int compare(Persoane p1, Persoane p2)
+    {
         return p1.getName().compareTo(p2.getName());
     }
 }

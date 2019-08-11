@@ -8,8 +8,6 @@ import java.util.Objects;
  */
 
 public class Student {
-    //    private static int nextId = 1;
-//    private int id;
     private String cnp;
     private String firstName;
     private String lastName;
@@ -19,8 +17,6 @@ public class Student {
 
 
     public Student(String cnp, String firstName, String lastName, DateOfBirth birthDate, int age, String gender) {
-        //       this.id = Student.nextId;
-//        Student.nextId++;
         this.cnp = cnp;
         this.firstName = firstName;
         this.lastName = lastName;

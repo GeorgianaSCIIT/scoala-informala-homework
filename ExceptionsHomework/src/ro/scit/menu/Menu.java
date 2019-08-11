@@ -1,10 +1,8 @@
 package ro.scit.menu;
-
 import ro.scit.comparators.StudentNameComparator;
 import ro.scit.entities.Student;
 import ro.scit.enums.GenderEnum;
 import ro.scit.utilities.DateOfBirth;
-
 import java.time.LocalDate;
 import java.util.*;
 
@@ -16,7 +14,6 @@ import java.util.*;
 
 public class Menu {
 
-    //   SimpleDateFormat sdf = new SimpleDateFormat("ddMMyyyy");
     Scanner sc = new Scanner(System.in);
     List<Student> studentList = new ArrayList<>();
     Student student = new Student();
@@ -42,7 +39,6 @@ public class Menu {
                     System.out.println("Insert student's last name: ");
                     String lastName = sc.nextLine();
                     System.out.println("Insert student's date of birth: ");
-                    //String str = sc.nextLine();
                     try {
                         System.out.print("Enter month: ");
                         int month = Integer.parseInt(sc.nextLine());
@@ -72,14 +68,6 @@ public class Menu {
                     }catch (NumberFormatException e){
                         System.err.println("Please insert a number");
                     }
-
-//                    try {
-//                        Date date = sdf.parse(str);
-//                        sdf = new SimpleDateFormat("dd.MM.yyyy");
-//                        System.out.println("Date of birth: " + sdf.format(date));
-//                    } catch (ParseException e) {
-//                        System.out.println("Parse Exception");
-//                    }
 
 
                     break;
@@ -137,7 +125,8 @@ public class Menu {
             Iterator<Student> iterator = studentList.iterator();
             while(iterator.hasNext()) {
                 Student student = iterator.next();
-                if (cnp.contentEquals(student.getCnp())) {
+                //if (cnp.contentEquals(student.getCnp())) {
+                    if (studentList.contains(student.getCnp())) {
                     iterator.remove();
                 }
             }
