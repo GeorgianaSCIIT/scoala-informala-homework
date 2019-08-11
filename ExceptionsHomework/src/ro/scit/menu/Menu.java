@@ -125,8 +125,7 @@ public class Menu {
             Iterator<Student> iterator = studentList.iterator();
             while(iterator.hasNext()) {
                 Student student = iterator.next();
-                //if (cnp.contentEquals(student.getCnp())) {
-                    if (studentList.contains(student.getCnp())) {
+                if (cnp.contentEquals(student.getCnp())) {
                     iterator.remove();
                 }
             }

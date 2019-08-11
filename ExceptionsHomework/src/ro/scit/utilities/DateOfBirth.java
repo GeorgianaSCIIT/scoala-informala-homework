@@ -42,11 +42,6 @@ public class DateOfBirth {
 
     @Override
     public String toString() {
-//        return "DateOfBirth{" +
-//                "month=" + month +
-//                ", day=" + day +
-//                ", year=" + year +
-//                '}';
         return String.format("%d/%d/%d", month, day, year);
     }
 
