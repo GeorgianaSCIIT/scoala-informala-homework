@@ -1,6 +1,5 @@
 package ro.siit.enums;
 
-
 /**
  * @author Georgiana
  * @version 1.0
@@ -10,23 +9,24 @@ package ro.siit.enums;
  */
 
 public enum Gender {
-    MALE, FEMALE;
-
-    private static String gender;
-    private static int gender1;
+    MALE("male", 0),
+    FEMALE("female", 1);
 
 
+    private  String gender;
+    private int genderNumber;
 
-    public static Gender setGender(){
-        if(gender.equals("female")) {
+    Gender(String gender, int genderNumber) {
+        this.gender = gender;
+        this.genderNumber = genderNumber;
+    }
+
+    public static Gender selectGender(String gender, int genderNumber){
+        if(gender.equals("female")){
             return FEMALE;
-        }  else if(gender.equals("male")){
-            return MALE;
-        } else if(gender1 == 1){
+        } else if (genderNumber == 1) {
             return FEMALE;
-        } else if(gender1 == 0){
-            return MALE;
-        } else
-            throw new  IllegalArgumentException("No such gender!");
+        }
+        return null;
     }
 }

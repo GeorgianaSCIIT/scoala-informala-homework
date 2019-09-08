@@ -1,5 +1,4 @@
 package ro.siit.entities;
-
 /**
  * @author Georgiana
  * @version 1.0
@@ -7,7 +6,9 @@ package ro.siit.entities;
  * Person Class
  *
  */
-
+import ro.siit.enums.Gender;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.Objects;
 
@@ -23,7 +24,7 @@ public class Person {
      * @param gender
      */
 
-    public Person(String name, String dateOfBirth, String gender) {
+    public Person(String name, String dateOfBirth, String gender){
         this.name = name;
         this.dateOfBirth = dateOfBirth;
         this.gender = gender;
@@ -38,9 +39,6 @@ public class Person {
         return name;
     }
 
-    public String getGender() {
-        return gender;
-    }
 
     @Override
     public boolean equals(Object o) {
@@ -62,17 +60,68 @@ public class Person {
         return  name + " " + dateOfBirth + " " + gender;
     }
 
+    /**
+     * Filter all  females born on August 28
+     * @param personList -the list where we save our result
+     * @param person
+     * @return Happy Birthay + name + year of birth
+     * @throws ParseException
+     */
 
-    public Person validatePerson(List<String> personList, Person person){
-        if (String.format(person.getDateOfBirth(), "yyyy-MM-dd").contains("08-28")) {
-            if (gender.equals("female")||gender.equals("1")) {
-                personList.add(person.getName() + person.getDateOfBirth() + " " + person.getGender());
-                System.out.println(person.getName() + person.getDateOfBirth() + " " + person.getGender());
+    public Person validatePerson(List<String> personList, Person person) throws ParseException {
+        if (getMonth().equals("08") && getDay().equals("28")) {
+            if(gender.equals("female") || gender.equals("1")){
+                personList.add(person.getName() + person.getDateOfBirth() + " " + Gender.selectGender("female", 1));
+                System.out.println("Happy birthday " + " " + person.getName() + "( " + getYear() + " )!");;
             }
         }
         return person;
     }
 
+    /**
+     * Format date
+     * @return formated date of birth
+     * @throws ParseException
+     */
+
+    public String formatDate() throws ParseException {
+        String birthDate = getDateOfBirth();
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        String newDateStr = simpleDateFormat.format(simpleDateFormat.parse(birthDate));
+        return newDateStr;
+    }
+
+    /**
+     * @return Year of Birth
+     * @throws ParseException
+     */
+
+    public String getYear() throws ParseException {
+        String str[] = formatDate().split("-");
+        String year = str[0];;
+        return year;
+    }
+
+    /**
+     * @return Month of Birth
+     * @throws ParseException
+     */
+
+    public String getMonth() throws ParseException {
+        String str[] = formatDate().split("-");
+        String month = str[1];
+        return month ;
+    }
+
+    /**
+     * @return Day of birth
+     * @throws ParseException
+     */
+    public String getDay() throws ParseException {
+        String str[] = formatDate().split("-");
+        String day = str[2];
+        return day;
+    }
 
 }
 

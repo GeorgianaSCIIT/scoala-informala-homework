@@ -10,9 +10,8 @@ package ro.siit.readwriter;
 
 import ro.siit.entities.Person;
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.text.ParseException;
+import java.util.*;
 
 public class Reader {
 
@@ -20,10 +19,11 @@ public class Reader {
      * Method to read from a file
      * @param file - the file wich contains the list of persons
      * @return a list with persons
+     * @throws ParseException
      * @throws FileNotFoundException
      */
 
-    public static List<String> read(File file) throws FileNotFoundException {
+    public static List<String> read(File file) throws FileNotFoundException, ParseException {
         Scanner scanner = new Scanner(file);
         List<String> personList = null;
         while (scanner.hasNextLine()) {
@@ -43,10 +43,11 @@ public class Reader {
      * @param fileReader - the file wich contains first list of persons
      * @param fileReader1 - the file wich contains the second list of persons
      * @return
+     * @throws ParseException
      * @throws FileNotFoundException
      */
 
-    public static File write (File fileWriter, File fileReader, File fileReader1) throws FileNotFoundException {
+    public static File write (File fileWriter, File fileReader, File fileReader1) throws FileNotFoundException, ParseException {
         PrintStream console = System.out;
         File file = new File(String.valueOf(fileWriter));
         FileOutputStream fos = new FileOutputStream(file);
@@ -57,5 +58,7 @@ public class Reader {
         System.setOut(console);
         return fileWriter;
     }
+
+
 
 }

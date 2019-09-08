@@ -1,4 +1,4 @@
-package ro.siit.ro.siit.thread;
+package ro.siit.thread;
 
 /**
  * @author Georgiana
@@ -10,6 +10,8 @@ package ro.siit.ro.siit.thread;
  */
 
 import java.io.*;
+import java.text.ParseException;
+
 import static ro.siit.readwriter.Reader.read;
 import static ro.siit.readwriter.Reader.write;
 
@@ -21,7 +23,7 @@ public class FileReader implements Runnable  {
         try {
             read(new File("file2.txt"));
             write(file ,new File("file1.txt"), new File("file2.txt"));
-        } catch (FileNotFoundException e) {
+        } catch (FileNotFoundException | ParseException e) {
             e.printStackTrace();
         }
     }
