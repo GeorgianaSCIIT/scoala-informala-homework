@@ -1,7 +1,6 @@
-package ro.siit;
+package ro.siit.entities;
 
 
-import java.io.Serializable;
 import java.util.Objects;
 
 /**
@@ -11,7 +10,7 @@ import java.util.Objects;
  * Person Class
  *
  */
-public class Person implements Serializable {
+public class Person {
     private String firstName;
     private String lastName;
     private String dateOfBirth;
